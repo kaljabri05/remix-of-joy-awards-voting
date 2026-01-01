@@ -277,18 +277,18 @@ const VotingFlow = () => {
                         </motion.div>
                       )}
 
-                      {/* Diamond avatar */}
+                      {/* Avatar circle */}
                       <motion.div
-                        className="w-16 h-16 mx-auto mb-4 rotate-45 bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 flex items-center justify-center"
+                        className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border-2 border-primary/40 flex items-center justify-center"
                         animate={isSelected ? { scale: [1, 1.1, 1] } : {}}
                         transition={{ duration: 1, repeat: isSelected ? Infinity : 0 }}
                       >
-                        <span className="-rotate-45 text-xl font-bold text-primary">
+                        <span className="text-xl font-bold text-primary">
                           {nominee.name.charAt(0)}
                         </span>
                       </motion.div>
 
-                      <h4 className="text-lg font-bold text-foreground mb-4">
+                      <h4 className="text-base font-bold text-foreground mb-4 leading-tight break-words px-2">
                         {nominee.name}
                       </h4>
 
