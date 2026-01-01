@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* Vandeland Awards - Luxurious Dark Theme */
+    --background: 0 15% 8%;
+    --foreground: 43 87% 94%;
+
+    --card: 0 20% 12%;
+    --card-foreground: 43 87% 94%;
+
+    --popover: 0 20% 10%;
+    --popover-foreground: 43 87% 94%;
+
+    /* Gold Primary */
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 15% 8%;
+
+    /* Deep Burgundy Secondary */
+    --secondary: 0 60% 25%;
+    --secondary-foreground: 43 87% 94%;
+
+    --muted: 0 20% 18%;
+    --muted-foreground: 43 30% 60%;
+
+    /* Gold Accent */
+    --accent: 43 74% 49%;
+    --accent-foreground: 0 15% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 50% 30%;
+    --input: 0 20% 20%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.75rem;
+
+    /* Custom Vandeland Colors */
+    --gold: 43 74% 49%;
+    --gold-light: 43 87% 65%;
+    --gold-dark: 43 60% 35%;
+    --burgundy: 0 60% 25%;
+    --burgundy-dark: 0 50% 15%;
+    --burgundy-light: 0 50% 35%;
+    --dark: 0 15% 8%;
+    --dark-card: 0 20% 12%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43, 74%, 49%) 0%, hsl(43, 87%, 65%) 50%, hsl(43, 74%, 49%) 100%);
+    --gradient-burgundy: linear-gradient(180deg, hsl(0, 60%, 25%) 0%, hsl(0, 50%, 15%) 100%);
+    --gradient-radial: radial-gradient(ellipse at center, hsl(0, 60%, 25%) 0%, hsl(0, 15%, 8%) 70%);
+    --gradient-diagonal: linear-gradient(135deg, hsl(0, 50%, 15%) 0%, hsl(0, 60%, 25%) 50%, hsl(0, 50%, 15%) 100%);
+
+    /* Shadows */
+    --shadow-gold: 0 0 30px hsl(43, 74%, 49%, 0.3);
+    --shadow-gold-lg: 0 0 60px hsl(43, 74%, 49%, 0.4);
+    --shadow-card: 0 10px 40px hsl(0, 0%, 0%, 0.5);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 20% 10%;
+    --sidebar-foreground: 43 87% 94%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 0 15% 8%;
+    --sidebar-accent: 0 60% 25%;
+    --sidebar-accent-foreground: 43 87% 94%;
+    --sidebar-border: 43 50% 30%;
+    --sidebar-ring: 43 74% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tajawal antialiased;
+    background-image: var(--gradient-radial);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl border border-gold/20 bg-card/80 backdrop-blur-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-10;
+    background: var(--gradient-gold);
+    pointer-events: none;
+  }
+
+  .gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-border {
+    border-image: var(--gradient-gold) 1;
+  }
+
+  .diamond-shape {
+    @apply relative;
+    transform: rotate(45deg);
+  }
+
+  .diamond-shape > * {
+    transform: rotate(-45deg);
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .glow-gold-lg {
+    box-shadow: var(--shadow-gold-lg);
+  }
+
+  .hover-glow {
+    @apply transition-all duration-500;
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-gold-lg);
+    border-color: hsl(var(--gold));
+  }
+
+  .btn-vote {
+    @apply relative overflow-hidden rounded-lg px-8 py-3 font-bold text-primary-foreground transition-all duration-300;
+    background: var(--gradient-gold);
+  }
+
+  .btn-vote::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(43, 87%, 70%) 0%, hsl(43, 74%, 55%) 100%);
+  }
+
+  .btn-vote:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-vote:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .category-card {
+    @apply glass-card p-6 cursor-pointer hover-glow transition-all duration-500;
+  }
+
+  .category-card:hover {
+    @apply scale-105;
+    transform: translateY(-8px);
+  }
+
+  .nominee-card {
+    @apply glass-card p-6 text-center hover-glow;
+  }
+
+  .decorative-line {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--gold)) 50%, transparent 100%);
+  }
+
+  .decorative-diamond {
+    @apply w-3 h-3 rotate-45 bg-primary mx-2;
+  }
+}
+
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 0 0 20px hsl(43, 74%, 49%, 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(43, 74%, 49%, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(43, 74%, 49%, 0.6);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(43, 74%, 49%, 0.2);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(43, 74%, 49%, 0.5);
+  }
+}
