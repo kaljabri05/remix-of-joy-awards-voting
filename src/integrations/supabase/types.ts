@@ -61,6 +61,7 @@ export type Database = {
       }
       votes: {
         Row: {
+          approved: boolean | null
           category_id: string
           created_at: string
           id: string
@@ -68,6 +69,7 @@ export type Database = {
           voter_id: string
         }
         Insert: {
+          approved?: boolean | null
           category_id: string
           created_at?: string
           id?: string
@@ -75,6 +77,7 @@ export type Database = {
           voter_id: string
         }
         Update: {
+          approved?: boolean | null
           category_id?: string
           created_at?: string
           id?: string
