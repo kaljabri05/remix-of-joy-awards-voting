@@ -31,7 +31,7 @@ export interface Category {
 export const categories: Category[] = [
   {
     id: "best-group",
-    title: "أفضل مجموعة",
+    title: "🥇 أفضل مجموعة",
     icon: Trophy,
     nominees: [
       { id: "elite", name: "النخبة" },
@@ -42,7 +42,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-event",
-    title: "أفضل إيفنت",
+    title: "🎉 أفضل إيفنت",
     icon: PartyPopper,
     nominees: [
       { id: "khaled", name: "خالد" },
@@ -54,7 +54,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-active-member",
-    title: "أفضل عضو متفاعل",
+    title: "💬 أفضل عضو متفاعل",
     icon: MessageCircle,
     nominees: [
       { id: "jumhr", name: "جمهر" },
@@ -67,7 +67,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-admin",
-    title: "أفضل إداري",
+    title: "🛡️ أفضل إداري",
     icon: Shield,
     nominees: [
       { id: "ammar", name: "عمار" },
@@ -80,7 +80,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-artist",
-    title: "أفضل رسام",
+    title: "🎨 أفضل رسام",
     icon: Palette,
     nominees: [
       { id: "waleed", name: "وليد" },
@@ -91,7 +91,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-rising-member",
-    title: "أفضل عضو صاعد",
+    title: "🌱 أفضل عضو صاعد",
     icon: Sprout,
     nominees: [
       { id: "yuki", name: "يوكي" },
@@ -103,7 +103,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-photographer",
-    title: "أفضل مصور",
+    title: "📸 أفضل مصور",
     icon: Camera,
     nominees: [
       { id: "nasser", name: "ناصر" },
@@ -115,7 +115,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-activity",
-    title: "أفضل فعالية",
+    title: "🎭 أفضل فعالية",
     icon: Drama,
     nominees: [
       { id: "crime", name: "الجريمة" },
@@ -128,7 +128,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-comedian",
-    title: "أفضل ذبيب",
+    title: "🤣 أفضل ذبيب",
     icon: Laugh,
     nominees: [
       { id: "anas", name: "أنس" },
@@ -141,12 +141,11 @@ export const categories: Category[] = [
   },
   {
     id: "best-participant",
-    title: "أفضل مشارك في الفعاليات",
+    title: "🎯 أفضل مشارك في الفعاليات",
     icon: Target,
     nominees: [
       { id: "nazeer", name: "نذير" },
-      { id: "ahmad", name: "أحمد" },
-      { id: "gon", name: "غون" },
+      { id: "ahmad-gon", name: "أحمد غون" },
       { id: "waleed", name: "وليد" },
       { id: "ammar", name: "عمار" },
       { id: "yuki", name: "يوكي" },
@@ -155,7 +154,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-debater",
-    title: "أفضل مناقش",
+    title: "🗣️ أفضل مناقش",
     icon: MessagesSquare,
     nominees: [
       { id: "hasoon", name: "حسون" },
@@ -168,7 +167,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-voice",
-    title: "أفضل فويساوي",
+    title: "🎧 أفضل فويساوي",
     icon: Headphones,
     nominees: [
       { id: "dawood", name: "داود" },
@@ -183,7 +182,7 @@ export const categories: Category[] = [
   },
   {
     id: "best-gamer",
-    title: "أفضل قيمر",
+    title: "🎮 أفضل قيمر",
     icon: Gamepad2,
     nominees: [
       { id: "void", name: "فويد" },
@@ -196,14 +195,14 @@ export const categories: Category[] = [
   },
   {
     id: "best-alt-account",
-    title: "أفضل حساب ثاني",
+    title: "🥸 أفضل حساب ثاني",
     icon: UserCircle2,
     nominees: [
       { id: "majeed", name: "مجيد" },
       { id: "mahshoom", name: "محشوم" },
       { id: "multi", name: "مالتي" },
       { id: "koro", name: "كورو" },
-      { id: "sahm", name: "سهم" },
+      { id: "sahm", name: "سهم (حسابه تبند سنتين)" },
     ],
   },
 ];
